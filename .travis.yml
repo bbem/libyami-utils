@@ -27,7 +27,16 @@ before_install:
   - sudo apt-get install -y libxext-dev
   - sudo apt-get install -y libxfixes-dev
   - sudo apt-get install -y intel-gpu-tools
-  - sudo apt-get install -y libgles2-dev
+  - sudo apt-get install -y cifs-utils
+  - sudo apt-get install -y yasm
+  - sudo apt-get install -y libghc-x11-dev
+  - sudo apt-get install -y libxmuu-dev 
+  - sudo apt-get install -y libxfixes-dev
+  - sudo apt-get install -y libxcb-glx0-dev 
+  - sudo apt-get install -y libgegl-dev
+  - sudo apt-get install -y libcogl-gles2-dev
+  - sudo apt-get install -y libv4l-0
+  - sudo apt-get install -y libv4l-dev
   - git clone https://github.com/01org/libva.git
   - (cd libva && ./autogen.sh && ./configure --prefix=/usr && sudo make install)
   - git clone https://github.com/01org/libyami.git
