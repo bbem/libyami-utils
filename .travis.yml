@@ -37,12 +37,9 @@ before_install:
   - sudo apt-get install -y libcogl-gles2-dev
   - sudo apt-get install -y libv4l-0
   - sudo apt-get install -y libv4l-dev
+
+  -export YAMI_ROOT_DIR="/opt/yami"
   
-  -if [ -n "$1" ]; then
-  -  export export YAMI_ROOT_DIR=$1
-  -else
-  -  export YAMI_ROOT_DIR="/opt/yami"
-  -fi
 
   -export VAAPI_PREFIX="${YAMI_ROOT_DIR}/vaapi"
   -export LIBYAMI_PREFIX="${YAMI_ROOT_DIR}/libyami"
