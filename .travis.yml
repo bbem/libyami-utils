@@ -43,13 +43,13 @@ before_install:
   - git clone https://github.com/01org/libva.git
   - (cd libva && ./autogen.sh && ./configure  && sudo make install)
   - git clone https://github.com/01org/libyami.git
-  - (cd libyami && ./autogen.sh  && make -j8 && make install)
+  - (cd libyami && ./autogen.sh  && make -j8 && sudo make install)
 
 
  
 install:
   - git clone https://github.com/01org/libyami-utils.git
-  - (cd libyami-utils && ./autogen.sh  && make -j8 && make install)
+  - (cd libyami-utils && ./autogen.sh  && make -j8 && sudo make install)
 
 addons:
   coverity_scan:
