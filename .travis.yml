@@ -38,27 +38,27 @@ before_install:
   - sudo apt-get install -y libv4l-0
   - sudo apt-get install -y libv4l-dev
 
-  -export YAMI_ROOT_DIR="/opt/yami"
+  - export YAMI_ROOT_DIR="/opt/yami"
   
 
-  -export VAAPI_PREFIX="${YAMI_ROOT_DIR}/vaapi"
-  -export LIBYAMI_PREFIX="${YAMI_ROOT_DIR}/libyami"
-  -ADD_PKG_CONFIG_PATH="${VAAPI_PREFIX}/lib/pkgconfig/:${LIBYAMI_PREFIX}/lib/pkgconfig/"
-  -ADD_LD_LIBRARY_PATH="${VAAPI_PREFIX}/lib/:${LIBYAMI_PREFIX}/lib/"
-  -ADD_PATH="${VAAPI_PREFIX}/bin/:${LIBYAMI_PREFIX}/bin/"
+  - export VAAPI_PREFIX="${YAMI_ROOT_DIR}/vaapi"
+  - export LIBYAMI_PREFIX="${YAMI_ROOT_DIR}/libyami"
+  - ADD_PKG_CONFIG_PATH="${VAAPI_PREFIX}/lib/pkgconfig/:${LIBYAMI_PREFIX}/lib/pkgconfig/"
+  - ADD_LD_LIBRARY_PATH="${VAAPI_PREFIX}/lib/:${LIBYAMI_PREFIX}/lib/"
+  - ADD_PATH="${VAAPI_PREFIX}/bin/:${LIBYAMI_PREFIX}/bin/"
 
-  -PLATFORM_ARCH_64=`uname -a | grep x86_64`
-  -if [ -n "$PKG_CONFIG_PATH" ]; then
+  - PLATFORM_ARCH_64=`uname -a | grep x86_64`
+  - if [ -n "$PKG_CONFIG_PATH" ]; then
   -    export PKG_CONFIG_PATH="${ADD_PKG_CONFIG_PATH}:$PKG_CONFIG_PATH"
-  -elif [ -n "$PLATFORM_ARCH_64" ]; then
+  - elif [ -n "$PLATFORM_ARCH_64" ]; then
   -    export PKG_CONFIG_PATH="${ADD_PKG_CONFIG_PATH}:/usr/lib/pkgconfig/:/usr/lib/i386-linux-gnu/pkgconfig/"
-  -else 
+  - else 
   -    export PKG_CONFIG_PATH="${ADD_PKG_CONFIG_PATH}:/usr/lib/pkgconfig/:/usr/lib/x86_64-linux-gnu/pkgconfig/"
-  -fi
+  - fi
 
-  -export LD_LIBRARY_PATH="${ADD_LD_LIBRARY_PATH}:$LD_LIBRARY_PATH"
+  - export LD_LIBRARY_PATH="${ADD_LD_LIBRARY_PATH}:$LD_LIBRARY_PATH"
 
-  -export PATH="${ADD_PATH}:$PATH"
+  - export PATH="${ADD_PATH}:$PATH"
   
   
   - git clone https://github.com/01org/libva.git
